@@ -1,16 +1,17 @@
 /*
 * This program illustarates how we could pass an Array to a fucntion by value. 
-* Since Arrays are passed to a funciton by reference. Hence, if we even want to pass an 
-* Array by value, we should use structures to accomplish our task. 
+* Since Arrays are passed to a funciton by reference. So, if we even want to pass an 
+* Array by value, we should use structures to do so. 
 * 
-* However, the size of the array must also be know in the structure as well. 
-* So using a macros would make things a bit easier. But Whenever we change the array, 
-* we should also change the value of our macros value!!. 
+* However, sice the size of and array must be a constant expression and must be  known during compile time,
+* using a macros definition  would make things a bit easier. 
+* But Whenever we change the array size, we should also change the value of our macros value!!. 
 */
 
 #include <iostream>
-#define N 4
+#define N 4		// The macros I used for the array size. 
 
+int size; 
 struct Wrapper
 {
 	int myArrayz[N]; 
