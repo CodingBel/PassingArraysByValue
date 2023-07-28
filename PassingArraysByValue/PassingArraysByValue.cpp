@@ -9,22 +9,19 @@
 */
 
 #include <iostream>
-#define N 4		// The macros I used for the array size. 
+#define arrSize 4		// The macros I used for the array size. 
 
-int size; 
 struct Wrapper
 {
-	int myArrayz[N]; 
+	int myArrayz[arrSize];
 };
 
-void arrDoubler(struct Wrapper myStr, int arrSize) {   // Creating an object of struct Wrapper and passing it as
-	int* myPtr = myStr.myArrayz;					   // a funciton argument along with the array's size. 
-
-	std::cout << "Showing the incoming values of the array in the stack frame of arrDoubler: " << std::endl; 
+void arrDoubler(struct Wrapper myStr) {   // Creating a variable of type struct Wrapper and passing it as an argument 		   
+	std::cout << "Showing the values of the array in the stack frame of arrDoubler: " << std::endl; 
 	for (int i = 0; i < arrSize; i++) 
 		std::cout << myStr.myArrayz[i] << std::endl; 
 
-	std::cout << "\nTime to modify and double the elements of the Array!" << std::endl; 
+	std::cout << "\nDouble the values of the Array elements" << std::endl; 
 	for (int i = 0; i < arrSize; i++)
 		myStr.myArrayz[i] *= 2; 
 
@@ -37,14 +34,14 @@ int main() {
 	int theArray[] = {1, 3, 5, 7};
 	 
 	struct Wrapper myObj; 
-	for (int i = 0; i < N; i++)
-		myObj.myArrayz[i] = theArray[i]; 
+	for (int i = 0; i < arrSize; i++)		// Copy the array elements to the structure 
+		myObj.myArrayz[i] = theArray[i];	// 
 
-	arrDoubler(myObj, N);
+	arrDoubler(myObj);
 
 	std::cout << "\n\n************************************************" << std::endl; 
 	std::cout << "Showing the values of the array in the main () stack frame\n"; 
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < arrSize; i++)
 		std::cout << theArray[i] << std::endl; 
 
 	return 0; 
