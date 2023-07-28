@@ -1,6 +1,6 @@
 /*
 * This program illustarates how we could pass an Array to a fucntion by value. 
-* Since Arrays are passed to a funciton by reference. So, if we even want to pass an 
+* Since Arrays are passed to a funciton by reference. If we even want to pass an 
 * Array by value, we should use structures to do so. 
 * 
 * However, sice the size of and array must be a constant expression and must be  known during compile time,
